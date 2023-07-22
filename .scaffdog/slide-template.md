@@ -24,10 +24,10 @@ questions:
 
 ```
 {{ if inputs.category == "tips" }}
-  {{ 'templates/tips.md' | read }}
+  {{ 'slide-templates/tips.md' | read }}
 {{ else if inputs.category == "introduction" }}
-  {{ 'templates/introduction.md' | read }}
+  {{ 'slide-templates/introduction.md' | read }}
 {{ else if inputs.category == "culture" }}
-  {{ 'templates/culture.md' | read }}
+  {{ 'slide-templates/culture.md' | read }}
 {{ end }}
 ```
