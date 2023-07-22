@@ -20,41 +20,14 @@ questions:
 
 ---
 
-# `{{ inputs.category == "tips" || "!" }}slides/tips/{{ inputs.title }}.md`
-
-```markdown
----
-marp: true
-theme: {{ inputs.theme }}
-paginate: true
----
-
-# {{ inputs.title }}
+# `slides/{{ inputs.category }}/{{ inputs.title }}.md`
 
 ```
-
-# `{{ inputs.category == "introduction" || "!" }}slides/introduction/{{ inputs.title }}.md`
-
-```markdown
----
-marp: true
-theme: {{ inputs.theme }}
-paginate: true
----
-
-# {{ inputs.title }}
-
-```
-
-# `{{ inputs.category == "culture" || "!" }}slides/culture/{{ inputs.title }}.md`
-
-```markdown
----
-marp: true
-theme: {{ inputs.theme }}
-paginate: true
----
-
-# {{ inputs.title }}
-
+{{ if inputs.category == "tips" }}
+  {{ 'templates/tips.md' | read }}
+{{ else if inputs.category == "introduction" }}
+  {{ 'templates/introduction.md' | read }}
+{{ else if inputs.category == "culture" }}
+  {{ 'templates/culture.md' | read }}
+{{ end }}
 ```
